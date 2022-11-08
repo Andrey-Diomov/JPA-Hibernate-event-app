@@ -22,6 +22,7 @@ allprojects {
             implementation 'org.springframework.boot:spring-boot-starter-web'
             compileOnly 'org.projectlombok:lombok'
             annotationProcessor 'org.projectlombok:lombok'
+            implementation group: 'joda-time', name: 'joda-time', version: '2.12.1'
 
             providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 
