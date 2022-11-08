@@ -82,14 +82,16 @@ public class EventController {
     public List<EventDTO> get(
             @RequestParam(value = "topic", required = false) String topic,
             @RequestParam(value = "organizer", required = false) String organizer,
-            @RequestParam(value = "sortTopic", required = false) Timestamp time,
-            @RequestParam(value = "sortOrganizer", required = false) String sort) {
+            @RequestParam(value = "sortTopic", required = false) String sortTopic,
+            @RequestParam(value = "sortOrganizer", required = false) String sortOrganizer,
+            @RequestParam(value = "sortTime", required = false) String sortTime) {
 
         ParametersEventQueryDTO parametersDTO = ParametersEventQueryDTO.builder()
                 .topic(topic)
                 .organizer(organizer)
-                .time(time)
-                .sort(sort)
+                .sortTopic(sortTopic)
+                .sortOrganizer(sortOrganizer)
+                .sortTime(sortTime)
                 .build();
 
         return eventService.getAll(parametersDTO);
